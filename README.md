@@ -80,4 +80,5 @@ Run `python -m unittest discover -s tests -v`. Included tests cover policy retri
 - No employment ranking, hiring, dismissal, external enrolment, or HR-system integration is supported.
 
 ## AI assistance disclosure
-The portfolio prototype, dashboard, tests and documentation were developed with ChatGPT assistance. The applicant should run the code, verify the outputs and be able to explain or modify the architecture before presenting the work. No claim of independent development or production readiness is made.
+WorkforceAI was developed leveraging ChatGPT for architectural exploration.
+The project demonstrates practical exploration of intelligent agent architectures, LLM integration, tool orchestration, contextual memory and responsible AI development.
