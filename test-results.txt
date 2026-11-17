@@ -1,0 +1,19 @@
+test_block_employment (test_agent.AgentTests.test_block_employment) ... ok
+test_gaps_and_memory (test_agent.AgentTests.test_gaps_and_memory) ... ok
+test_invalid_course (test_agent.AgentTests.test_invalid_course) ... ok
+test_model_cannot_change_employee (test_agent.AgentTests.test_model_cannot_change_employee) ... ok
+test_negative_proposal (test_agent.AgentTests.test_negative_proposal) ... ok
+test_no_implicit_proposal (test_agent.AgentTests.test_no_implicit_proposal) ... ok
+test_proposal_without_evidence (test_agent.AgentTests.test_proposal_without_evidence) ... ok
+test_rejection (test_agent.AgentTests.test_rejection) ... ok
+test_request_and_decision (test_agent.AgentTests.test_request_and_decision) ... ok
+test_retrieval (test_agent.AgentTests.test_retrieval) ... ok
+test_scripted_model_loop (test_agent.AgentTests.test_scripted_model_loop) ... ok
+test_unallowlisted_tool (test_agent.AgentTests.test_unallowlisted_tool) ... ok
+test_unknown_employee (test_agent.AgentTests.test_unknown_employee) ... ok
+test_unknown_policy (test_agent.AgentTests.test_unknown_policy) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.005s
+
+OK

@@ -1,0 +1,68 @@
+{
+  "mode": "offline-demo (rule-based, not AI inference)",
+  "status": "complete",
+  "answer": "Skills gaps: python, ticketing. Recommended courses: [{\"skill\": \"python\", \"course\": \"Python fundamentals\", \"price_zar\": 800}, {\"skill\": \"ticketing\", \"course\": \"Service desk ticketing\", \"price_zar\": 500}]. Manager approval is required (POL-01).",
+  "policy_sources": [
+    "POL-01",
+    "POL-02",
+    "POL-04"
+  ],
+  "pending_requests": [],
+  "tool_trace": [
+    {
+      "tool": "skills_gap",
+      "args": {
+        "employee": "E001"
+      },
+      "result": {
+        "employee": "E001",
+        "role": "IT Support Technician",
+        "gaps": [
+          "python",
+          "ticketing"
+        ]
+      }
+    },
+    {
+      "tool": "search_policy",
+      "args": {
+        "query": "training approval skills development budget"
+      },
+      "result": [
+        {
+          "id": "POL-01",
+          "title": "Training approvals",
+          "text": "Training requests require manager approval before enrolment. The training budget cap is R1500 per employee per course. A request above R1500 must be escalated and cannot be created by this prototype."
+        },
+        {
+          "id": "POL-02",
+          "title": "Skills development",
+          "text": "Recommend training based on documented role requirements and demonstrated skills gaps. Training recommendations are not performance ratings or employment decisions."
+        },
+        {
+          "id": "POL-04",
+          "title": "Workplace safety",
+          "text": "Safety training must be completed before employees perform restricted site tasks. Escalate uncertainty to a human supervisor."
+        }
+      ]
+    },
+    {
+      "tool": "recommend_training",
+      "args": {
+        "employee": "E001"
+      },
+      "result": [
+        {
+          "skill": "python",
+          "course": "Python fundamentals",
+          "price_zar": 800
+        },
+        {
+          "skill": "ticketing",
+          "course": "Service desk ticketing",
+          "price_zar": 500
+        }
+      ]
+    }
+  ]
+}

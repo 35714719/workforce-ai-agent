@@ -1,0 +1,9 @@
+1. Install Python from https://www.python.org/downloads/ if needed.
+2. Extract ZIP, open workforce-ai folder, then open PowerShell there.
+3. Run: python main.py --ask "Recommend training for E001"
+4. Run: python -m unittest discover -s tests -v
+5. Read README.md for live model setup and human approval demo.
+6. On GitHub, create a public repository named workforce-ai-agent.
+7. Select Add file > Upload files. Upload README.md, agent.py, main.py, the data and tests folders, test-results.txt, demo-output.json and .gitignore (not any .db or .env file). Commit changes.
+8. Open your repository and copy the actual link to your job application.
+9. Review the code and disclose ChatGPT assistance. Do not claim successful live API testing unless you run it successfully.

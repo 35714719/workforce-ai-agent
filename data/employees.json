@@ -1,0 +1,4 @@
+[
+ {"id":"E001","role":"IT Support Technician","skills":["troubleshooting","networking"],"required":["troubleshooting","networking","python","ticketing"]},
+ {"id":"E002","role":"Operations Analyst","skills":["excel","reporting"],"required":["excel","reporting","sql","data visualization"]}
+]

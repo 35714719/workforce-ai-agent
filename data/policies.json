@@ -1,0 +1,6 @@
+[
+ {"id":"POL-01","title":"Training approvals","text":"Training requests require manager approval before enrolment. The training budget cap is R1500 per employee per course. A request above R1500 must be escalated and cannot be created by this prototype."},
+ {"id":"POL-02","title":"Skills development","text":"Recommend training based on documented role requirements and demonstrated skills gaps. Training recommendations are not performance ratings or employment decisions."},
+ {"id":"POL-03","title":"Data privacy","text":"Only use synthetic employee data in demos. Do not infer sensitive characteristics, rank employees, or make hiring, dismissal or disciplinary decisions."},
+ {"id":"POL-04","title":"Workplace safety","text":"Safety training must be completed before employees perform restricted site tasks. Escalate uncertainty to a human supervisor."}
+]
