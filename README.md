@@ -5,6 +5,20 @@ A Python portfolio prototype for a workforce learning and development scenario, 
 ## Problem
 A manager asks what training an employee needs. Rather than hard-coding every sequence, a model-backed planner can choose which tools to call, observe their results, and decide when to stop. A human, not the model, decides on any proposed training request.
 
+## Browser dashboard (v2)
+
+Python 3.10+ is the only dependency. No Streamlit install or package download is needed. The dashboard uses Python's standard-library HTTP server, HTML, CSS and JavaScript.
+
+From the repository folder in Windows CMD:
+
+```cmd
+python dashboard.py
+```
+
+Or double-click `START_DASHBOARD.bat` for the offline demo. The dashboard opens at http://127.0.0.1:8501/ (leave the terminal open; Ctrl+C stops it). Choose an employee, fill a suggested prompt, then click **Ask agent**. Expand the returned tool trace and structured JSON. Draft a request and explicitly approve or reject it in the local queue. The separate `dashboard.db` stores the dashboard session and simulated decisions. Clearing the conversation does not delete saved context or decisions. The employee selector sets the ID used for new questions unless the question already names an employee.
+
+To use the live model, set `GEMINI_API_KEY` and the model ID that works with your own Gemini project in the same terminal before launching `dashboard.py`; choose **Live · Gemini** in the browser. Without a key, live mode is disabled. An API/model error is displayed safely; no key is passed to browser code. The local server listens only on 127.0.0.1 and checks the request origin/host and a local request token. This is a single-user demonstration, not production authentication or a public deployment.
+
 ## Quick start (no API key, no dependencies)
 Python 3.10+ and a terminal are sufficient. Extract the repository and open a terminal in its folder.
 
@@ -43,7 +57,7 @@ flowchart TD
   E --> C
   F --> C
   C -->|Finish| H[Structured response with source IDs and trace]
-  I[Separate human CLI command] --> J[Approve or reject local pending record]
+  I[Separate human CLI or dashboard decision] --> J[Approve or reject local pending record]
   F --> J
 ```
 
@@ -55,10 +69,10 @@ flowchart TD
 - **Safety:** fictional data, tool allowlist, identifier matching, argument validation, duplicate call check, cost constraint and explicit local human decisions. Employment decision keywords are screened as a basic demonstration, not a comprehensive prompt injection defense.
 
 ## Evaluation
-Run `python -m unittest discover -s tests -v`. Included tests cover policy retrieval, missing evidence, memory isolation, proposal and human decision handling, rejection, invalid employees/courses, employment decision blocking, unknown tool, employee mismatch, missing explicit request and a scripted model loop. `test-results.txt` and `demo-output.json` contain actual local run output. These are deterministic/mock tests, not a measure of live model accuracy.
+Run `python -m unittest discover -s tests -v`. Included tests cover policy retrieval, missing evidence, memory isolation, proposal and human decision handling, rejection, invalid employees/courses, employment decision blocking, unknown tool, employee mismatch, missing explicit request and a scripted model loop. `test-results.txt` and `demo-output.json` contain actual local run output. The suite now contains 23 tests: 14 original agent tests and 9 dashboard HTTP integration tests. JavaScript syntax was checked. Browser interaction testing could not be completed because the test environment blocked local browser navigation; the dashboard live path was tested with a mock planner, not real credentials. These are deterministic/mock tests, not a measure of live model accuracy.
 
 ## Limitations and next steps
-- Live API integration is unverified until a credentialed run; models, quotas and responses can change.
+- The dashboard live API integration needs a new credentialed run; models, quotas and responses can change. The original CLI was tested by the applicant separately.
 - Retrieval is small-scale lexical search. Add embeddings/vector retrieval and recall evaluation if policy documents grow.
 - Model responses can contain unsupported claims; validate citations and use a robust red-team test set before production.
 - Local sessions do not authenticate identity or enforce roles. Add real RBAC, audit integrity, consent, retention controls and POPIA review before handling actual HR data.
@@ -66,4 +80,4 @@ Run `python -m unittest discover -s tests -v`. Included tests cover policy retri
 - No employment ranking, hiring, dismissal, external enrolment, or HR-system integration is supported.
 
 ## AI assistance disclosure
-This initial portfolio prototype, tests and documentation were generated with ChatGPT assistance. The applicant should run the code, verify the outputs and be able to explain or modify the architecture before presenting the work. No claim of independent development or completed live integration is made.
+The portfolio prototype, dashboard, tests and documentation were developed with ChatGPT assistance. The applicant should run the code, verify the outputs and be able to explain or modify the architecture before presenting the work. No claim of independent development or production readiness is made.

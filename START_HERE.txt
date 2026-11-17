@@ -1,9 +1,14 @@
-1. Install Python from https://www.python.org/downloads/ if needed.
-2. Extract ZIP, open workforce-ai folder, then open PowerShell there.
-3. Run: python main.py --ask "Recommend training for E001"
-4. Run: python -m unittest discover -s tests -v
-5. Read README.md for live model setup and human approval demo.
-6. On GitHub, create a public repository named workforce-ai-agent.
-7. Select Add file > Upload files. Upload README.md, agent.py, main.py, the data and tests folders, test-results.txt, demo-output.json and .gitignore (not any .db or .env file). Commit changes.
-8. Open your repository and copy the actual link to your job application.
-9. Review the code and disclose ChatGPT assistance. Do not claim successful live API testing unless you run it successfully.
+WORKFORCEAI v2 — browser dashboard
+
+1. Extract all files. Open the workforce-ai folder containing dashboard.py.
+2. Double-click START_DASHBOARD.bat, or open CMD in this folder and run:
+   python dashboard.py
+3. Browser opens http://127.0.0.1:8501/ ; keep CMD open.
+4. Select E001, click Analyse & recommend training, then Ask agent.
+5. Try Draft a training request, then Ask agent. Confirm approve or reject in the queue.
+6. For live mode: set your private Gemini API key and working model ID in the SAME CMD window before launching. Select Live - Gemini in the browser. Do not share or commit any key.
+7. Run python -m unittest discover -s tests -v from this folder to reproduce 23 local tests.
+
+No external dependencies. Synthetic data only. Local demo, not a hosted site.
+Do not upload database files, cache folders, .env or API keys to GitHub.
+Browser interactions and live API calls need verification on your computer.

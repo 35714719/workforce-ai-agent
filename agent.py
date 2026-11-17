@@ -74,7 +74,8 @@ def demo_planner(question, employee, history):
     q=question.lower(); done={h['tool'] for h in history}
     def call(tool, **args): return {'tool':tool,'args':args}
     wants_proposal=explicit_proposal(q) and ('training' in q or any(s in q for s in COURSES))
-    wants_skills=any(w in q for w in ('skill','gap','training','recommend')) or wants_proposal
+    policy_only=bool(re.search(r'\b(policy|policies|approval|budget)\b',q)) and not any(w in q for w in ('recommend','skills','gap','propose','draft','request training'))
+    wants_skills=(any(w in q for w in ('skill','gap','training','recommend')) or wants_proposal) and not policy_only
     if wants_skills and employee:
         if 'skills_gap' not in done: return call('skills_gap',employee=employee)
         if 'search_policy' not in done: return call('search_policy',query='training approval skills development budget')

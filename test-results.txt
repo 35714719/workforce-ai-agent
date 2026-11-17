@@ -12,8 +12,17 @@ test_scripted_model_loop (test_agent.AgentTests.test_scripted_model_loop) ... ok
 test_unallowlisted_tool (test_agent.AgentTests.test_unallowlisted_tool) ... ok
 test_unknown_employee (test_agent.AgentTests.test_unknown_employee) ... ok
 test_unknown_policy (test_agent.AgentTests.test_unknown_policy) ... ok
+test_approve_and_prevent_repeat (test_dashboard.DashboardTests.test_approve_and_prevent_repeat) ... ok
+test_bad_input (test_dashboard.DashboardTests.test_bad_input) ... ok
+test_missing_key (test_dashboard.DashboardTests.test_missing_key) ... ok
+test_mock_live_path (test_dashboard.DashboardTests.test_mock_live_path) ... ok
+test_policy_with_memory (test_dashboard.DashboardTests.test_policy_with_memory) ... ok
+test_recommendation_and_memory (test_dashboard.DashboardTests.test_recommendation_and_memory) ... ok
+test_reject (test_dashboard.DashboardTests.test_reject) ... ok
+test_state_and_static (test_dashboard.DashboardTests.test_state_and_static) ... ok
+test_token_required (test_dashboard.DashboardTests.test_token_required) ... ok
 
 ----------------------------------------------------------------------
-Ran 14 tests in 0.005s
+Ran 23 tests in 4.605s
 
 OK
